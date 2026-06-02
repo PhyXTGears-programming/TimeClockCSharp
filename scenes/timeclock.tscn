@@ -1,0 +1,387 @@
+[gd_scene format=3 uid="uid://c5njpj36naotg"]
+
+[ext_resource type="PackedScene" uid="uid://b85ane3cd5fn1" path="res://scenes/user.tscn" id="1_c5oxc"]
+[ext_resource type="Script" uid="uid://ca8323utlj4ys" path="res://scripts/FancyScrollContainer.cs" id="1_nd8ns"]
+[ext_resource type="Theme" uid="uid://yo7ymlf3m16j" path="res://art/mainTheme.tres" id="2_h6j7y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g22gm"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7atpe"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.25, 0.25, 0.25, 0.6)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyucl"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gmm1"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.7058824)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6j7y"]
+bg_color = Color(0, 0.6, 0.16078432, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0.37, 0.09866666, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nd8ns"]
+bg_color = Color(0, 0.8, 0.21176471, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0.56078434, 0.14901961, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uo4r"]
+bg_color = Color(0.67058825, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.36862746, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f84a5"]
+bg_color = Color(0.87, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.56078434, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4ixx"]
+bg_color = Color(0, 0.31, 0.6, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0.15294118, 0.36862746, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j86bk"]
+bg_color = Color(0, 0.4117647, 0.8, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0.23921569, 0.5686275, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8fap"]
+bg_color = Color(0.7490196, 0.54901963, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.5019608, 0.36862746, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bkoi"]
+bg_color = Color(0.9019608, 0.65882355, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.6989105, 0.5125132, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[node name="timeclock" type="Control" unique_id=1027835196]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="margin" type="MarginContainer" parent="." unique_id=1606624345]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="box" type="BoxContainer" parent="margin" unique_id=2095434057]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="margin/box" unique_id=214615978]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Button" type="Button" parent="margin/box/VBoxContainer" unique_id=1153092848]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g22gm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7atpe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g22gm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_g22gm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g22gm")
+text = "^"
+
+[node name="VScrollBar" type="VScrollBar" parent="margin/box/VBoxContainer" unique_id=1237857070]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 3
+theme = ExtResource("2_h6j7y")
+theme_override_styles/scroll = SubResource("StyleBoxFlat_dyucl")
+theme_override_styles/grabber = SubResource("StyleBoxFlat_4gmm1")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_4gmm1")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxFlat_4gmm1")
+page = 20.0
+
+[node name="Button2" type="Button" parent="margin/box/VBoxContainer" unique_id=1872405779]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g22gm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7atpe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g22gm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_g22gm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g22gm")
+text = "v"
+
+[node name="users" type="ScrollContainer" parent="margin/box" unique_id=1533108705]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_nd8ns")
+
+[node name="vbox" type="VBoxContainer" parent="margin/box/users" unique_id=136364900]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="user" parent="margin/box/users/vbox" unique_id=2035856170 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Guy Who Never Existed "
+
+[node name="user2" parent="margin/box/users/vbox" unique_id=498819258 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Super Cool Guy"
+status = 4
+
+[node name="user3" parent="margin/box/users/vbox" unique_id=1971671885 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Cooler Guy"
+status = 1
+
+[node name="user4" parent="margin/box/users/vbox" unique_id=1015219532 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Guy Who Never Existed "
+
+[node name="user5" parent="margin/box/users/vbox" unique_id=87991915 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Super Cool Guy"
+status = 4
+
+[node name="user6" parent="margin/box/users/vbox" unique_id=398281148 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Cooler Guy"
+status = 1
+
+[node name="user7" parent="margin/box/users/vbox" unique_id=717150169 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Guy Who Never Existed "
+
+[node name="user8" parent="margin/box/users/vbox" unique_id=907551479 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Super Cool Guy"
+status = 4
+
+[node name="user9" parent="margin/box/users/vbox" unique_id=2058629576 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Cooler Guy"
+status = 1
+
+[node name="user10" parent="margin/box/users/vbox" unique_id=2102068396 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Guy Who Never Existed "
+
+[node name="user11" parent="margin/box/users/vbox" unique_id=2021076031 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Super Cool Guy"
+status = 4
+
+[node name="user12" parent="margin/box/users/vbox" unique_id=810266242 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Cooler Guy"
+status = 1
+
+[node name="user13" parent="margin/box/users/vbox" unique_id=1847192096 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Guy Who Never Existed "
+
+[node name="user14" parent="margin/box/users/vbox" unique_id=278946724 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Super Cool Guy"
+status = 4
+
+[node name="user15" parent="margin/box/users/vbox" unique_id=394415867 instance=ExtResource("1_c5oxc")]
+layout_mode = 2
+userName = "The Cooler Guy"
+status = 1
+
+[node name="buttons" type="Panel" parent="margin/box" unique_id=1457590470]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="margin" type="MarginContainer" parent="margin/box/buttons" unique_id=1278407167]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="box" type="BoxContainer" parent="margin/box/buttons/margin" unique_id=1333656827]
+layout_mode = 2
+vertical = true
+
+[node name="inOutButtons" type="VBoxContainer" parent="margin/box/buttons/margin/box" unique_id=1417792591]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="inButton" type="Button" parent="margin/box/buttons/margin/box/inOutButtons" unique_id=432910093]
+z_index = 1
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("2_h6j7y")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_h6j7y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nd8ns")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h6j7y")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_h6j7y")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h6j7y")
+text = "IN"
+
+[node name="outButton" type="Button" parent="margin/box/buttons/margin/box/inOutButtons" unique_id=1920752011]
+z_index = 1
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("2_h6j7y")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_7uo4r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f84a5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7uo4r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7uo4r")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7uo4r")
+text = "OUT"
+
+[node name="spacing" type="Control" parent="margin/box/buttons/margin/box" unique_id=1380917434]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="otherButtons" type="HBoxContainer" parent="margin/box/buttons/margin/box" unique_id=1656772580]
+layout_mode = 2
+
+[node name="newUserButton" type="Button" parent="margin/box/buttons/margin/box/otherButtons" unique_id=992349569]
+z_index = 1
+custom_minimum_size = Vector2(0, 79.63)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_h6j7y")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4ixx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j86bk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a4ixx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_a4ixx")
+theme_override_styles/focus = SubResource("StyleBoxFlat_a4ixx")
+text = "NEW USER"
+
+[node name="inspectButton" type="Button" parent="margin/box/buttons/margin/box/otherButtons" unique_id=600004128]
+z_index = 1
+custom_minimum_size = Vector2(0, 79.63)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_h6j7y")
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_f8fap")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7bkoi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f8fap")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_f8fap")
+theme_override_styles/focus = SubResource("StyleBoxFlat_f8fap")
+text = "INSPECT USER"
+
+[node name="background" type="ColorRect" parent="." unique_id=1595724341]
+z_index = -100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.15, 0.15, 0.15, 1)

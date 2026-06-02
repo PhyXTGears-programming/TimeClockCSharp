@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d2oc20kfm0bhw"]
+
+[ext_resource type="PackedScene" uid="uid://c5njpj36naotg" path="res://scenes/timeclock.tscn" id="1_o5qli"]
+
+[node name="main" type="Control" unique_id=1552140569]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="timeclock" parent="." unique_id=1027835196 instance=ExtResource("1_o5qli")]
+layout_mode = 1

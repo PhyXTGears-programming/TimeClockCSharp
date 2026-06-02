@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="TimeClock"
+run/main_scene="uid://d2oc20kfm0bhw"
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+config/icon="res://art/icon.svg"
+
+[autoload]
+
+Globals="*uid://d3i8s6mcir13j"
+
+[dotnet]
+
+project/assembly_name="TimeClock"
+
+[file_customization]
+
+folder_colors={
+"res://art/": "red",
+"res://scenes/": "yellow",
+"res://scripts/": "green"
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
