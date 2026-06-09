@@ -1,40 +1,6 @@
 [gd_scene format=3 uid="uid://c5njpj36naotg"]
 
 [ext_resource type="PackedScene" uid="uid://b85ane3cd5fn1" path="res://scenes/user.tscn" id="1_c5oxc"]
-[ext_resource type="Script" uid="uid://ca8323utlj4ys" path="res://scripts/FancyScrollContainer.cs" id="1_nd8ns"]
-[ext_resource type="Theme" uid="uid://yo7ymlf3m16j" path="res://art/mainTheme.tres" id="2_h6j7y"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g22gm"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7atpe"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.25, 0.25, 0.25, 0.6)
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyucl"]
-content_margin_left = 4.0
-content_margin_top = 0.0
-content_margin_right = 4.0
-content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gmm1"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(1, 1, 1, 0.7058824)
-corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6j7y"]
 bg_color = Color(0, 0.6, 0.16078432, 1)
@@ -311,13 +277,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="inButton" type="Button" parent="margin/box/buttons/margin/box/inOutButtons" unique_id=432910093]
+unique_name_in_owner = true
 z_index = 1
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("2_h6j7y")
-theme_override_font_sizes/font_size = 20
+theme_type_variation = &"LargeColorfulButton"
 theme_override_styles/normal = SubResource("StyleBoxFlat_h6j7y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nd8ns")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h6j7y")
@@ -326,13 +292,13 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_h6j7y")
 text = "IN"
 
 [node name="outButton" type="Button" parent="margin/box/buttons/margin/box/inOutButtons" unique_id=1920752011]
+unique_name_in_owner = true
 z_index = 1
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("2_h6j7y")
-theme_override_font_sizes/font_size = 20
+theme_type_variation = &"LargeColorfulButton"
 theme_override_styles/normal = SubResource("StyleBoxFlat_7uo4r")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_f84a5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7uo4r")
@@ -352,8 +318,7 @@ z_index = 1
 custom_minimum_size = Vector2(0, 79.63)
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("2_h6j7y")
-theme_override_font_sizes/font_size = 18
+theme_type_variation = &"LargeColorfulButton"
 theme_override_styles/normal = SubResource("StyleBoxFlat_a4ixx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j86bk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a4ixx")
@@ -366,8 +331,7 @@ z_index = 1
 custom_minimum_size = Vector2(0, 79.63)
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("2_h6j7y")
-theme_override_font_sizes/font_size = 19
+theme_type_variation = &"LargeColorfulButton"
 theme_override_styles/normal = SubResource("StyleBoxFlat_f8fap")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7bkoi")
 theme_override_styles/hover = SubResource("StyleBoxFlat_f8fap")
