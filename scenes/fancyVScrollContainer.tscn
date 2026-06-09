@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://btq82yy7mt7m4"]
+
+[ext_resource type="Script" uid="uid://dsnr232eo5sfy" path="res://scripts/FancyVScrollContainer.cs" id="1_fi81q"]
+[ext_resource type="PackedScene" uid="uid://d2noiawupypae" path="res://scenes/fancyVScrollBar.tscn" id="2_pijbj"]
+
+[node name="fancyVScrollContainer" type="HBoxContainer" unique_id=2036256061]
+offset_right = 39.0
+offset_bottom = 70.0
+script = ExtResource("1_fi81q")
+
+[node name="scrollContainer" type="ScrollContainer" parent="." unique_id=871409355]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="vbox" type="VBoxContainer" parent="scrollContainer" unique_id=1975218467]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="fancyVScrollBar" parent="." unique_id=1028699710 instance=ExtResource("2_pijbj")]
+layout_mode = 2
+size_flags_vertical = 3

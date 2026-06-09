@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://b85ane3cd5fn1"]
 
 [ext_resource type="Script" uid="uid://bprwhm5hh8vm5" path="res://scripts/UserUI.cs" id="1_3uhnw"]
+[ext_resource type="ButtonGroup" uid="uid://jx6u5pkplvy2" path="res://art/userSelectPanelButtonGroup.tres" id="1_qhbes"]
 
-[node name="user" type="Panel" unique_id=2035856170]
+[node name="user" type="Button" unique_id=674204352]
 custom_minimum_size = Vector2(0, 50)
-anchors_preset = -1
-anchor_right = 0.31500003
-anchor_bottom = 0.083000004
-offset_right = 0.1199646
-offset_bottom = 0.21599579
+offset_right = 363.0
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("1_qhbes")
 script = ExtResource("1_3uhnw")
 
 [node name="margin" type="MarginContainer" parent="." unique_id=319058158]

@@ -6,7 +6,7 @@ public enum UserStatus {
     AUTO_OUT
 }
 
-// create a static class to house behavior of UserStatus
+// Create a static class to house behavior of UserStatus
 public static class UserStatusExtensions {
     public static bool isClockedIn(this UserStatus status) {
         switch(status) {
@@ -15,7 +15,7 @@ public static class UserStatusExtensions {
             case UserStatus.DOUBLE_IN:
                 return true;
             case UserStatus.OUT:
-                return true;
+                return false;
             case UserStatus.DOUBLE_OUT:
                 return false;
             case UserStatus.AUTO_OUT:

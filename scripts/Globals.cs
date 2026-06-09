@@ -2,20 +2,27 @@ using Godot;
 
 /// <summary>
 /// This class is autoloaded.
-/// Which means godot will create an instance of this class automatically when the project starts and attach it to a node called 'globals'.
-/// The 'instance' var is safe to use and will never be null
+/// Which means godot will create an instance of this class automatically when the project starts before any normal nodes are created and attach it to a node called 'Globals'.
+/// The 'instance' var is safe to use and will never be null unless somthing is very wrong
 /// <summary>
-public partial class Globals : Node {
+public sealed partial class Globals : Node {
 
-    public static Globals instance {
-        get {
-            // Fetch the autoload node directly from the root if not cached
-            if (field == null) {
-                field = (Engine.GetMainLoop() as SceneTree).Root.GetNode<Globals>("globals");
-            }
+    // vars
 
-            return field;
+    public const string SAVE_PATH = "";
+
+    // nodes
+
+    public static Globals instance {get; private set;}
+
+    // godot functions
+
+    public override void _EnterTree() {
+        instance = GetTree().Root.GetNodeOrNull<Globals>("Globals");
+
+        if (instance == null) {
+            GD.PrintErr($"Fatal: Unable to init autoload '{nameof(Globals)}'. Exiting...");
+            GetTree().Quit(1);
         }
     }
-
 }

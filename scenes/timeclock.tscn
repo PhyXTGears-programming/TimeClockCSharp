@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c5njpj36naotg"]
 
+[ext_resource type="Script" uid="uid://dfu8hgkjwxljk" path="res://scripts/TimeclockUI.cs" id="1_7uo4r"]
 [ext_resource type="PackedScene" uid="uid://b85ane3cd5fn1" path="res://scenes/user.tscn" id="1_c5oxc"]
+[ext_resource type="PackedScene" uid="uid://btq82yy7mt7m4" path="res://scenes/fancyVScrollContainer.tscn" id="1_nd8ns"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6j7y"]
 bg_color = Color(0, 0.6, 0.16078432, 1)
@@ -122,6 +124,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_7uo4r")
 
 [node name="margin" type="MarginContainer" parent="." unique_id=1606624345]
 layout_mode = 1
@@ -135,121 +138,20 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="box" type="BoxContainer" parent="margin" unique_id=2095434057]
+[node name="box" type="HBoxContainer" parent="margin" unique_id=1396360486]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="margin/box" unique_id=214615978]
-custom_minimum_size = Vector2(35, 0)
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Button" type="Button" parent="margin/box/VBoxContainer" unique_id=1153092848]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_g22gm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7atpe")
-theme_override_styles/hover = SubResource("StyleBoxFlat_g22gm")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_g22gm")
-theme_override_styles/focus = SubResource("StyleBoxFlat_g22gm")
-text = "^"
-
-[node name="VScrollBar" type="VScrollBar" parent="margin/box/VBoxContainer" unique_id=1237857070]
-layout_mode = 2
-size_flags_horizontal = 1
-size_flags_vertical = 3
-theme = ExtResource("2_h6j7y")
-theme_override_styles/scroll = SubResource("StyleBoxFlat_dyucl")
-theme_override_styles/grabber = SubResource("StyleBoxFlat_4gmm1")
-theme_override_styles/grabber_highlight = SubResource("StyleBoxFlat_4gmm1")
-theme_override_styles/grabber_pressed = SubResource("StyleBoxFlat_4gmm1")
-page = 20.0
-
-[node name="Button2" type="Button" parent="margin/box/VBoxContainer" unique_id=1872405779]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_g22gm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7atpe")
-theme_override_styles/hover = SubResource("StyleBoxFlat_g22gm")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_g22gm")
-theme_override_styles/focus = SubResource("StyleBoxFlat_g22gm")
-text = "v"
-
-[node name="users" type="ScrollContainer" parent="margin/box" unique_id=1533108705]
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("1_nd8ns")
-
-[node name="vbox" type="VBoxContainer" parent="margin/box/users" unique_id=136364900]
+[node name="fancyVScrollContainer" parent="margin/box" unique_id=2036256061 instance=ExtResource("1_nd8ns")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="user" parent="margin/box/users/vbox" unique_id=2035856170 instance=ExtResource("1_c5oxc")]
+[node name="user" parent="margin/box/fancyVScrollContainer/scrollContainer/vbox" parent_id_path=PackedInt32Array(2036256061, 1975218467) index="0" unique_id=674204352 instance=ExtResource("1_c5oxc")]
 layout_mode = 2
-userName = "The Guy Who Never Existed "
+userName = "Some guy"
 
-[node name="user2" parent="margin/box/users/vbox" unique_id=498819258 instance=ExtResource("1_c5oxc")]
+[node name="user2" parent="margin/box/fancyVScrollContainer/scrollContainer/vbox" parent_id_path=PackedInt32Array(2036256061, 1975218467) index="1" unique_id=838052965 instance=ExtResource("1_c5oxc")]
 layout_mode = 2
-userName = "The Super Cool Guy"
-status = 4
-
-[node name="user3" parent="margin/box/users/vbox" unique_id=1971671885 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Cooler Guy"
-status = 1
-
-[node name="user4" parent="margin/box/users/vbox" unique_id=1015219532 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Guy Who Never Existed "
-
-[node name="user5" parent="margin/box/users/vbox" unique_id=87991915 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Super Cool Guy"
-status = 4
-
-[node name="user6" parent="margin/box/users/vbox" unique_id=398281148 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Cooler Guy"
-status = 1
-
-[node name="user7" parent="margin/box/users/vbox" unique_id=717150169 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Guy Who Never Existed "
-
-[node name="user8" parent="margin/box/users/vbox" unique_id=907551479 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Super Cool Guy"
-status = 4
-
-[node name="user9" parent="margin/box/users/vbox" unique_id=2058629576 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Cooler Guy"
-status = 1
-
-[node name="user10" parent="margin/box/users/vbox" unique_id=2102068396 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Guy Who Never Existed "
-
-[node name="user11" parent="margin/box/users/vbox" unique_id=2021076031 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Super Cool Guy"
-status = 4
-
-[node name="user12" parent="margin/box/users/vbox" unique_id=810266242 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Cooler Guy"
-status = 1
-
-[node name="user13" parent="margin/box/users/vbox" unique_id=1847192096 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Guy Who Never Existed "
-
-[node name="user14" parent="margin/box/users/vbox" unique_id=278946724 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Super Cool Guy"
-status = 4
-
-[node name="user15" parent="margin/box/users/vbox" unique_id=394415867 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "The Cooler Guy"
-status = 1
+userName = "A diffrent guy"
 
 [node name="buttons" type="Panel" parent="margin/box" unique_id=1457590470]
 custom_minimum_size = Vector2(400, 0)
@@ -349,3 +251,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.15, 0.15, 0.15, 1)
+
+[editable path="margin/box/fancyVScrollContainer"]

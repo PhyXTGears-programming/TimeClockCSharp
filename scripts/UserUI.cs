@@ -4,34 +4,36 @@ using System;
 /// <summary>
 /// Instance of a node that controls UI for the user plate
 /// <summary>
-public partial class UserUI : Panel {
-    // vars
+public partial class UserUI : Button {
+	// vars
 
-    [Export] public string userName = "NULL";
+	[Export] public string userName = "NULL";
 
-    [Export] public UserStatus status = UserStatus.OUT;
+	[Export] public UserStatus status = UserStatus.OUT;
 
-    private Label nameLabel;
-    private Label statusLabel;
+    // nodes
 
-    // godot functions
+	private Label nameLabel;
+	private Label statusLabel;
 
-    public override void _Ready() {
-        nameLabel = GetNode<Label>("margin/hbox/name");
-        statusLabel = GetNode<Label>("margin/hbox/status");
+	// godot functions
 
-        updateText();
-    }
+	public override void _Ready() {
+		nameLabel = GetNode<Label>("margin/hbox/name");
+		statusLabel = GetNode<Label>("margin/hbox/status");
 
-    // functions
+		updateText();
+	}
 
-    public void updateText() {
-        if (nameLabel == null || statusLabel == null) {
-            GD.PrintErr("UserUI node is not in tree yet.");
-            return;
-        }
+	// functions
 
-        nameLabel.Text = userName;
-        statusLabel.Text = status.ToStringFancy();
-    }
+	public void updateText() {
+		if (nameLabel == null || statusLabel == null) {
+			GD.PrintErr($"Unable to update text '{nameof(UserUI)}' node is not in tree yet.");
+			return;
+		}
+
+		nameLabel.Text = userName;
+		statusLabel.Text = status.ToStringFancy();
+	}
 }

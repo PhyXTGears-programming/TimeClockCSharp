@@ -1,6 +1,4 @@
 using Godot;
 using System;
 
-public partial class Main : Control {
-
-}
+public partial class Main : Control {}
