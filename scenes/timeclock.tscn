@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c5njpj36naotg"]
 
 [ext_resource type="Script" uid="uid://dfu8hgkjwxljk" path="res://scripts/TimeclockUI.cs" id="1_7uo4r"]
-[ext_resource type="PackedScene" uid="uid://b85ane3cd5fn1" path="res://scenes/user.tscn" id="1_c5oxc"]
 [ext_resource type="PackedScene" uid="uid://btq82yy7mt7m4" path="res://scenes/fancyVScrollContainer.tscn" id="1_nd8ns"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6j7y"]
@@ -141,17 +140,10 @@ theme_override_constants/margin_bottom = 10
 [node name="box" type="HBoxContainer" parent="margin" unique_id=1396360486]
 layout_mode = 2
 
-[node name="fancyVScrollContainer" parent="margin/box" unique_id=2036256061 instance=ExtResource("1_nd8ns")]
+[node name="userSelectPanel" parent="margin/box" unique_id=2036256061 instance=ExtResource("1_nd8ns")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="user" parent="margin/box/fancyVScrollContainer/scrollContainer/vbox" parent_id_path=PackedInt32Array(2036256061, 1975218467) index="0" unique_id=674204352 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "Some guy"
-
-[node name="user2" parent="margin/box/fancyVScrollContainer/scrollContainer/vbox" parent_id_path=PackedInt32Array(2036256061, 1975218467) index="1" unique_id=838052965 instance=ExtResource("1_c5oxc")]
-layout_mode = 2
-userName = "A diffrent guy"
 
 [node name="buttons" type="Panel" parent="margin/box" unique_id=1457590470]
 custom_minimum_size = Vector2(400, 0)
@@ -251,5 +243,3 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.15, 0.15, 0.15, 1)
-
-[editable path="margin/box/fancyVScrollContainer"]

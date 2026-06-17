@@ -1,3 +1,5 @@
+using System;
+
 public enum UserStatus {
     IN,
     DOUBLE_IN,
@@ -40,5 +42,22 @@ public static class UserStatusExtensions {
         }
 
         return "";
+    }
+
+    public static UserStatus FromStringFancy(string from) {
+        switch(from) {
+            case "IN":
+                return UserStatus.IN;
+            case "*IN":
+                return UserStatus.DOUBLE_IN;
+            case "OUT":
+                return UserStatus.OUT ;
+            case "*OUT":
+                return UserStatus.DOUBLE_OUT;
+            case "@OUT":
+                return UserStatus.AUTO_OUT;
+        }
+
+        throw new FormatException($"Parse error: Unable to convert string {from} to a {nameof(UserStatus)} value");
     }
 }

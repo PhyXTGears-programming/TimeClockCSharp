@@ -28,6 +28,8 @@ public partial class FancyVScrollContainer : HBoxContainer {
         scrollContainer.SortChildren += updateSettings;
     }
 
+    // functions
+    
     private void updateInternalScrollBar(double newValue) {
         scrollBar.Value = newValue;
     }

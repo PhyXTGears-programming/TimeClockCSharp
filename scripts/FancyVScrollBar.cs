@@ -17,7 +17,7 @@ public partial class FancyVScrollBar : VBoxContainer {
     public Button upButton {get; protected set;}
     public Button downButton {get; protected set;}
 
-    // godot functions
+    // Godot functions
 
     public override void _Ready() {
         scrollBar = GetNode<VScrollBar>("scrollBar");

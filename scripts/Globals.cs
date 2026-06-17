@@ -1,3 +1,5 @@
+using System;
+using System.Globalization;
 using Godot;
 
 /// <summary>
@@ -24,5 +26,7 @@ public sealed partial class Globals : Node {
             GD.PrintErr($"Fatal: Unable to init autoload '{nameof(Globals)}'. Exiting...");
             GetTree().Quit(1);
         }
+
+        Serializer.initDataFiles();
     }
 }
