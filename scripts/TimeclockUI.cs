@@ -28,6 +28,10 @@ public partial class TimeclockUI : Control {
 
         string[] allUsers = Serializer.allUsers();
 
+        if (allUsers.Length == 0) {
+            GD.PushWarning($"Warnning no users found check '{Serializer.USERS_FILE_PATH}'");
+        }
+
         for (int i = 0; i < allUsers.Length; i++) {
             string user = allUsers[i];
 
@@ -50,18 +54,34 @@ public partial class TimeclockUI : Control {
 
     private void inButtonPressed() {
 
-        UserUI user = userSelectButtons.GetPressedButton() as UserUI;
+        BaseButton button = userSelectButtons.GetPressedButton();
         
-        if (user == null) return;
+        if (button == null) {
+            Globals.instance.showNotification("No user selected.");
+            return;
+        }
+        
+        // Incorrect type handling
+        if (userSelectButtons.GetPressedButton() is not UserUI user) {
+            GD.PushError($"'{nameof(userSelectButtons)}' button group is expected to have only buttons that are of type '{nameof(UserUI)}'");
+            return;
+        }
 
         UserStatus status = Serializer.readStatus(user.userName);
 
         if (!status.isClockedIn()) {
+            // Was auto clocked out
+            if (status == UserStatus.AUTO_OUT) {
+                Globals.instance.showNotification("You were clock out automatically.\n Please clock out correctly next time, this has been noted...");
+            }
+            
             status = UserStatus.IN;
         }
         else {
             // Already was clocked in
             status = UserStatus.DOUBLE_IN;
+
+            Globals.instance.showNotification("Already clocked IN!");
         }
 
         user.updateStatus(status);
@@ -70,9 +90,19 @@ public partial class TimeclockUI : Control {
     }
 
     private void outButtonPressed() {
-        UserUI user = userSelectButtons.GetPressedButton() as UserUI;
 
-        if (user == null) return;
+        BaseButton button = userSelectButtons.GetPressedButton();
+
+        if (button == null) {
+            Globals.instance.showNotification("No user selected.");
+            return;
+        }
+        
+        // Incorrect type handling
+        if (userSelectButtons.GetPressedButton() is not UserUI user) {
+            GD.PushError($"'{nameof(userSelectButtons)}' button group is expected to have only buttons that are of type '{nameof(UserUI)}'");
+            return;
+        }
 
         UserStatus status = Serializer.readStatus(user.userName);
 
@@ -82,6 +112,8 @@ public partial class TimeclockUI : Control {
         else {
             // Already was clocked out
             status = UserStatus.DOUBLE_OUT;
+
+            Globals.instance.showNotification("Already clocked OUT!");
         }
         
         user.updateStatus(status);

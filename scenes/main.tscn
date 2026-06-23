@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d2oc20kfm0bhw"]
 
+[ext_resource type="Script" uid="uid://c1xx0n5bmgf3w" path="res://scripts/Main.cs" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://c5njpj36naotg" path="res://scenes/timeclock.tscn" id="1_o5qli"]
 
 [node name="main" type="Control" unique_id=1552140569]
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("1_0wfyh")
 
 [node name="timeclock" parent="." unique_id=1027835196 instance=ExtResource("1_o5qli")]
 layout_mode = 1

@@ -195,6 +195,10 @@ public static class Serializer {
 
     public static string[] allUsers() {
         string usersText = File.ReadAllText(USERS_FILE_PATH);
+
+        if (string.IsNullOrWhiteSpace(usersText)) {
+            return Array.Empty<string>();
+        }
         
         return usersText.Split(NEW_LINE);
     }

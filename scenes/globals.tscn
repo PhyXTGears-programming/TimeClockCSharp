@@ -4,3 +4,9 @@
 
 [node name="globals" type="Node" unique_id=757649912]
 script = ExtResource("1_e82qx")
+
+[node name="notificationsContainer" type="VBoxContainer" parent="." unique_id=1267072552]
+z_index = 20
+clip_contents = true
+offset_right = 300.0
+offset_bottom = 648.0

@@ -13,6 +13,13 @@ public sealed partial class Globals : Node {
 
     public const string SAVE_PATH = "";
 
+    public static Debugger debugger;
+
+    
+    private static PackedScene notificationScene;
+
+    private static VBoxContainer notificationsContainer;
+
     // nodes
 
     public static Globals instance {get; private set;}
@@ -27,6 +34,35 @@ public sealed partial class Globals : Node {
             GetTree().Quit(1);
         }
 
+        debugger = new Debugger();
+
+        OS.AddLogger(debugger);
+
+        notificationScene = ResourceLoader.Load<PackedScene>("res://scenes/notificationPopup.tscn");
+        notificationsContainer = GetNode<VBoxContainer>("notificationsContainer");
+
+        debugger.messageLogged += (string message, Debugger.LogType type) => {
+            // Normal print statements are not shown
+            if (type == Debugger.LogType.NORMAL) return;
+
+            showNotification(message, type);
+            
+        };
+
         Serializer.initDataFiles();
+    }
+
+    // Functions
+
+    public void showNotification(string message, Debugger.LogType type) {
+        Control notification = NotificationPopup.instantiateWithArgs(notificationScene, message, type);
+
+        notificationsContainer.AddChild(notification);
+    }
+
+    public void showNotification(string message) {
+        Control notification = NotificationPopup.instantiateWithArgs(notificationScene, message, Debugger.LogType.NORMAL);
+
+        notificationsContainer.AddChild(notification);
     }
 }
