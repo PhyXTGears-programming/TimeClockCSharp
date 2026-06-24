@@ -205,7 +205,7 @@ public static class Serializer {
 
     private static string getTimeFile(string userName) {
         if (string.IsNullOrEmpty(userName)) {
-            throw new FormatException($"Parse error: user name: {userName} is incorrect format");
+            throw new FormatException($"Parse error: user name: '{userName}' is incorrect format");
         }
         
         return Path.Combine(TIMES_FILE_DIR, userName + ".csv");
@@ -223,7 +223,7 @@ public static class Serializer {
             throw new FormatException($"Parse error: too many or little values found when parsing status");
         }
 
-        // second entry is the status
+        // Second entry is the status
         string statusString = entry[1];
 
         userStatus = UserStatusExtensions.FromStringFancy(statusString);
@@ -236,7 +236,7 @@ public static class Serializer {
             throw new FormatException($"Parse error: too many or little values found when parsing time");
         }
 
-        // first entry is the date time
+        // First entry is the date time
         string dateString = entry[0];
 
         time = DateTime.Parse(dateString);
