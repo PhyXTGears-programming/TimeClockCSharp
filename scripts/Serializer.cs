@@ -147,9 +147,9 @@ public static class Serializer {
                     string line = lines[index];
 
                     // Record time
-                    getTimeEntry(line, out DateTime time);
+                    getTimeStampEntry(line, out DateTime timeStamp);
 
-                    clockInStart = time;
+                    clockInStart = timeStamp;
                 }
             }
             else if (insideClockInIndex != -1) {
@@ -157,10 +157,10 @@ public static class Serializer {
 
                 string line = lines[index];
 
-                getTimeEntry(line, out DateTime time);
+                getTimeStampEntry(line, out DateTime timeStamp);
 
                 // Accumulate time
-                accumulatedTime += time - clockInStart;
+                accumulatedTime += timeStamp - clockInStart;
 
                 // And... close the latch
                 insideClockInIndex = -1;
@@ -177,15 +177,15 @@ public static class Serializer {
         return accumulatedTime;
     }
 
-	public static void appendTime(
+	public static void appendEntry(
 		string userName,
 		UserStatus userStatus,
-		DateTime time
+		DateTime timeStamp
 	) {
 		string path = getTimeFile(userName);
 
         // E.g 2026-06-18 15:26
-        string formattedTime = time.ToString(DATE_TIME_FORMAT);
+        string formattedTime = timeStamp.ToString(DATE_TIME_FORMAT);
 
 		string log = 
             formattedTime + DELIMITER + userStatus.ToStringFancy() + NEW_LINE;
@@ -211,9 +211,9 @@ public static class Serializer {
         return Path.Combine(TIMES_FILE_DIR, userName + ".csv");
     }
 
-    private static void getEntry(string line, out DateTime time, out UserStatus userStatus) {
+    private static void getEntries(string line, out DateTime timeStamp, out UserStatus userStatus) {
         getStatusEntry(line, out userStatus);
-        getTimeEntry(line, out time);
+        getTimeStampEntry(line, out timeStamp);
     }
 
     private static void getStatusEntry(string line, out UserStatus userStatus) {
@@ -229,17 +229,17 @@ public static class Serializer {
         userStatus = UserStatusExtensions.FromStringFancy(statusString);
     }
 
-    private static void getTimeEntry(string line, out DateTime time) {
+    private static void getTimeStampEntry(string line, out DateTime timeStamp) {
         string[] entry = line.Split(DELIMITER);
 
         if (entry.Length != 2) {
-            throw new FormatException($"Parse error: too many or little values found when parsing time");
+            throw new FormatException($"Parse error: too many or little values found when parsing time stamp");
         }
 
         // First entry is the date time
         string dateString = entry[0];
 
-        time = DateTime.Parse(dateString);
+        timeStamp = DateTime.Parse(dateString);
     }
 
     private static string readLastLine(string path) {
@@ -285,5 +285,5 @@ public static class Serializer {
         
         return Encoding.UTF8.GetString(buffer);
     }
-    
+
 }
