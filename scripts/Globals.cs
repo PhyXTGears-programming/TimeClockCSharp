@@ -11,8 +11,6 @@ public sealed partial class Globals : Node {
 
     // vars
 
-    public const string SAVE_PATH = "";
-
     public static Debugger debugger;
 
     

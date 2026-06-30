@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-
 /// <summary>
 /// Users file format:
 /// <code>
@@ -43,7 +42,7 @@ using System.Text;
 /// </summary>
 public static class Serializer {
 
-	// vars
+	// Vars
 
 	public static readonly string DATA_PATH = Path.Combine(
 		Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
@@ -79,7 +78,7 @@ public static class Serializer {
 
         string lastLine = readLastLine(path);
 
-        getStatusEntry(lastLine, out UserStatus status);
+        UserStatus status = parseStatusValue(lastLine);
 
         return status;
     }
@@ -98,7 +97,7 @@ public static class Serializer {
         for (int i = 0; i < lines.Length; i++) {
             string line = lines[i];
 
-            getStatusEntry(line, out UserStatus status);
+            UserStatus status = parseStatusValue(line);
 
             clockInOutStack.Push(status.isClockedIn());
         }
@@ -147,7 +146,7 @@ public static class Serializer {
                     string line = lines[index];
 
                     // Record time
-                    getTimeStampEntry(line, out DateTime timeStamp);
+                    DateTime timeStamp = praseTimeStampValue(line);
 
                     clockInStart = timeStamp;
                 }
@@ -157,7 +156,7 @@ public static class Serializer {
 
                 string line = lines[index];
 
-                getTimeStampEntry(line, out DateTime timeStamp);
+                DateTime timeStamp = praseTimeStampValue(line);
 
                 // Accumulate time
                 accumulatedTime += timeStamp - clockInStart;
@@ -177,7 +176,7 @@ public static class Serializer {
         return accumulatedTime;
     }
 
-	public static void appendEntry(
+	public static void appendTimeEntry(
 		string userName,
 		UserStatus userStatus,
 		DateTime timeStamp
@@ -192,6 +191,15 @@ public static class Serializer {
 
 		File.AppendAllText(path, entry);
 	}
+
+    public static void addNewUser(string userName, UserGroup userGroup) {
+        string entry = 
+            userName + DELIMITER +  userGroup.ToStringFancy();
+
+        File.AppendAllText(USERS_FILE_PATH, entry);
+
+        appendTimeEntry(userName, UserStatus.OUT, DateTime.Now);
+    }
 
     public static string[] allUsers() {
         string usersText = File.ReadAllText(USERS_FILE_PATH);
@@ -211,12 +219,14 @@ public static class Serializer {
         return Path.Combine(TIMES_FILE_DIR, userName + ".csv");
     }
 
-    private static void getEntries(string line, out DateTime timeStamp, out UserStatus userStatus) {
-        getStatusEntry(line, out userStatus);
-        getTimeStampEntry(line, out timeStamp);
+    private static (DateTime, UserStatus) parseTimeFileValues(string line) {
+        DateTime timeStamp = praseTimeStampValue(line);
+        UserStatus userStatus = parseStatusValue(line);
+
+        return (timeStamp, userStatus);
     }
 
-    private static void getStatusEntry(string line, out UserStatus userStatus) {
+    private static UserStatus parseStatusValue(string line) {
         string[] entry = line.Split(DELIMITER);
 
         if (entry.Length != 2) {
@@ -226,10 +236,10 @@ public static class Serializer {
         // Second entry is the status
         string statusString = entry[1];
 
-        userStatus = UserStatusExtensions.FromStringFancy(statusString);
+        return UserStatusExtensions.FromStringFancy(statusString);
     }
 
-    private static void getTimeStampEntry(string line, out DateTime timeStamp) {
+    private static DateTime praseTimeStampValue(string line) {
         string[] entry = line.Split(DELIMITER);
 
         if (entry.Length != 2) {
@@ -239,7 +249,7 @@ public static class Serializer {
         // First entry is the date time
         string dateString = entry[0];
 
-        timeStamp = DateTime.Parse(dateString);
+        return DateTime.Parse(dateString);
     }
 
     private static string readLastLine(string path) {

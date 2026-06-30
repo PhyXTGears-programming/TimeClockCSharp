@@ -86,7 +86,7 @@ public partial class TimeclockUI : Control {
 
         user.updateStatus(status);
 
-        Serializer.appendEntry(user.userName, status, DateTime.Now);
+        Serializer.appendTimeEntry(user.userName, status, DateTime.Now);
     }
 
     private void outButtonPressed() {
@@ -118,6 +118,6 @@ public partial class TimeclockUI : Control {
         
         user.updateStatus(status);
 
-        Serializer.appendEntry(user.userName, status, DateTime.Now);
+        Serializer.appendTimeEntry(user.userName, status, DateTime.Now);
     }
 }
