@@ -187,10 +187,10 @@ public static class Serializer {
         // E.g 2026-06-18 15:26
         string formattedTime = timeStamp.ToString(DATE_TIME_FORMAT);
 
-		string log = 
+		string entry =
             formattedTime + DELIMITER + userStatus.ToStringFancy() + NEW_LINE;
 
-		File.AppendAllText(path, log);
+		File.AppendAllText(path, entry);
 	}
 
     public static string[] allUsers() {
