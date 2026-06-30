@@ -35,6 +35,10 @@ folder_colors={
 
 theme/custom="uid://yo7ymlf3m16j"
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
